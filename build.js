@@ -39,7 +39,12 @@ prompt([
   shell.exec(`git add .`);
   shell.exec(`git commit -m "${answers.commit}"`);
   console.log("REPO HAS BEEN COMMITED");
-  shell.exec(`git push -u origin path`);
-  console.log("REPO HAS BEEN PUSHED");
-  console.log("DONE");
+  try {
+    shell.exec(`git push -u origin main`);
+  } catch (error) {
+    console.log('c%'+error,
+      {
+      color: 'blue',
+    });
+  }
 });
