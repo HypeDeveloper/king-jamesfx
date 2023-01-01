@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   bcryptjs: ^2.4.3
+  colors: ^1.4.0
   cors: ^2.8.5
   dotenv: ^16.0.3
   express: ^4.18.2
@@ -24,6 +25,7 @@ dependencies:
   randomstring: 1.2.3
 
 devDependencies:
+  colors: 1.4.0
   inquirer: 8.0.0
   inquirer-fuzzy-path: 2.3.0
   shelljs: 0.8.5
@@ -1057,6 +1059,11 @@ packages:
 
   /color-name/1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
+    dev: true
+
+  /colors/1.4.0:
+    resolution: {integrity: sha512-a+UqTh4kgZg/SlGvfbzDHpgRu7AAQOmmqRHJnxhRZICKFUT91brVhNNt58CMWU9PsBbv3PDCZUHbVxuDiH2mtA==}
+    engines: {node: '>=0.1.90'}
     dev: true
 
   /concat-map/0.0.1:
