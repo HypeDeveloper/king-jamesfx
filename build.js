@@ -10,42 +10,36 @@
 
 
 const shell = require('shelljs')
-const rl = require('readline')
+const inquirer = require("inquirer");
+const prompt = inquirer.createPromptModule()
+inquirer.registerPrompt("fuzzypath", require("inquirer-fuzzy-path"));
 
 console.log('>> Building vite frontend');
 
-input_build_vite()
-shell.exec(`git add .`);
-git_commit();
-
-function input_build_vite() {
-    // handles input from the user
-    const input = rl.createInterface({
-        input: process.stdin,
-        output: process.stdout,
-    });
-
-    input.question(">> Path to your frontend: ", (ans) => {
-        shell.exec(`npm run build --prefix ${ans}`);
-        input.close();
-    });
-}
-
-function git_commit() {
-
-    // handles input from the user
-    const input = rl.createInterface({
-        input: process.stdin,
-        output: process.stdout,
-    });
-
-    input.question(">> Add a commit message: ", (ans) => {
-        if (ans === "") {
-            console.log('no message was added');
-            git_commit();
-        }
-        shell.exec(`git commit -m "${ans}"`);
-        shell.exec(`git push -u origin main"`);
-        input.close();
-    });
-}
+prompt([
+    {
+        type: "fuzzypath",
+        name: "path",
+        excludePath: (nodePath) => nodePath.startsWith("node_modules"),
+        excludeFilter: (nodePath) => nodePath == ".",
+        itemType: "any",
+        rootPath: "./",
+        message: "Path to frontend directory for your building: ",
+        default: "./frontend",
+        suggestOnly: false,
+        depthLimit: 5,
+  },
+  {
+    name: "commit",
+    message: "Add a commit message: ",
+  }
+]).then((answers) => {
+  shell.exec(`npm run build --prefix ${answers.path}`)
+  console.log("BUILD COMPLETE");
+  shell.exec(`git add .`);
+  shell.exec(`git commit -m "${answers.commit}"`);
+  console.log("REPO HAS BEEN COMMITED");
+  shell.exec(`git push -u origin path`);
+  console.log("REPO HAS BEEN PUSHED");
+  console.log("DONE");
+});

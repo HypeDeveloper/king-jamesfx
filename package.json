@@ -23,6 +23,8 @@
         "randomstring": "^1.2.3"
     },
     "devDependencies": {
+        "inquirer": "8.0.0",
+        "inquirer-fuzzy-path": "^2.3.0",
         "shelljs": "^0.8.5"
     }
 }
