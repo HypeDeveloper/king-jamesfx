@@ -37,13 +37,13 @@ prompt([
   }
 ]).then((answers) => {
   shell.exec(`npm run build --prefix ${answers.path}`)
-  console.log("\n BUILD COMPLETE \n\n".green);
+  console.log("\n BUILD COMPLETE \n".green);
   shell.exec(`git add .`);
   shell.exec(`git commit -m "${answers.commit}"`);
-  console.log("\n REPO HAS BEEN COMMITED \n\n".green);
+  console.log("\n REPO HAS BEEN COMMITED \n".green);
   try {
     shell.exec(`git push -u origin main`);
-    console.log("\nDone".red);
+    console.log("\nDone".green);
   } catch (error) {
     console.log("Err during Push".red);
     console.log(error);
