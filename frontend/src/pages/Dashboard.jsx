@@ -174,36 +174,30 @@ export function Index() {
                     {data.name}
                 </h1>
                 <div className="AmountBox">
-                    <div className="ddboxAA">
+                    <div className="ddBox">
                         <p className="Content">My Balance</p>
                         <h1 className="Title">
-                            ${data.amount}<span>USD</span>
+                            ${data.amount}<span className="pin">USD</span>
                         </h1>
-
                         <div className="buttonsDD">
-                            <button>Deposit An Amount</button>
+                            <button>Deposit An Amonunt</button>
                             <button className="bin">Withdraw</button>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div className="leftBid">
-                <div className="userbaxRef ddref">
-                    <p className="Content">
-                        Total Referals
-                    </p>
-                    <h1 className="Title">
-                        {data.inviteCount}
-                    </h1>
-                </div>
-                <div className="userbaxRef ddef">
-                    <p className="Content">
-                        Active Package
-                    </p>
-                    <h1 className="Title">
-                        Starter Pack
-                    </h1>
+                    <div className="othBB">
+                        <p className="Content">Total Referals</p>
+                        <h1 className="Title">
+                            0
+                        </h1>
+                        <br/>
+                        <button>My Ref Code</button>
+                    </div>
+                    <div className="othBB bon">
+                        <p className="Content">Active plan</p>
+                        <h1 className="Title bon">
+                            Starter Pack
+                        </h1>
+                    </div>
                 </div>
             </div>
         </div>

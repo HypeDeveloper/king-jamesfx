@@ -1,10 +1,13 @@
 .dashboard{
     background-color: black;
     height: calc(100vh);
-    overflow: hidden;
+    /* overflow: hidden; */
+    /* zoom : 80%; */
+
 }
 .dnav{
     padding: 20px 70px;
+    zoom: 85%;
 }
 .dnav-wrap{
     display: flex;
@@ -42,10 +45,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 70px 0px 70px 60px;
+    zoom: 80%;
+    padding: 70px 0px 20px 60px;
 }
 .sidbottom{
-    margin-top: 35vh;
+    margin-top: 50vh;
 }
 .navsDD{
     display: flex;
@@ -84,7 +88,7 @@
 .dindex{
     padding: 30px 50px;
     display: flex;
-    gap: 120px
+    gap: 120px;
 }
 .ddboxAA{
     margin-top: 100px;
@@ -94,18 +98,9 @@
     background: white;
 }
 
-.ddboxAA{
-    padding: 50px;
-}
-.ddboxAA h1,  .ddboxAA p{
-    color: black;
-}
-.ddboxAA h1 span{
-    font-size: 1.5rem;
-    opacity: .6;
-}
+
 .buttonsDD{
-    margin-top: 30px;
+    margin-top: 40px;
     display: flex;
     gap : 30px;
 }
@@ -115,6 +110,7 @@
 
 .userbaxRef p, .userbaxRef h1{
     color:white;
+    
 }
 .ddref{
     background: orange;
@@ -133,4 +129,38 @@
 .ddef:hover{
     background: rgba(45, 188, 255, 0.881);
     transition: 1s;
+}
+.ddBox{
+    zoom: 80%;
+    width: 500px;
+    border-radius: 30px;
+    padding: 60px 50px;
+    background: white;
+}
+
+.ddBox h1, .ddBox p{
+    color: black;
+}
+
+.AmountBox{
+    display: flex;
+    gap: 50px;
+    margin-top: 80px;
+    /* background: pink; */
+}
+.othBB{
+    padding: 50px 40px;
+    background: #5565FF;
+    border-radius: 30px;
+    zoom: 90%;
+    width: 250px;
+
+}
+.pin{
+    font-size: 2rem;
+    opacity: .8;
+}
+
+.bon{
+    font-weight: 1rem;
 }
