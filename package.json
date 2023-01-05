@@ -17,6 +17,7 @@
         "express-async-handler": "^1.2.0",
         "jsonwebtoken": "^9.0.0",
         "mongoose": "^6.8.2",
+        "password-validator": "^5.3.0",
         "randomstring": "^1.2.3"
     },
     "devDependencies": {

@@ -1,0 +1,136 @@
+.dashboard{
+    background-color: black;
+    height: calc(100vh);
+    overflow: hidden;
+}
+.dnav{
+    padding: 20px 70px;
+}
+.dnav-wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dnav-wrap p{
+    color:white;
+}
+.dnav-wrap img{
+    width: 40px;
+}
+.userdbox{
+    height: 50px;
+    width: 50px;
+    background: white;
+    border-radius: 1000000px
+}
+
+.dbottom{
+    display: flex;
+    gap: 40px;
+}
+.sided{
+    width: 17vw;
+    height: calc(100vh - 119px);
+}
+.sNanv, .dindex{
+    color: white;
+}
+.othersdout{
+    width:78vw;
+}
+.sNanv{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 70px 0px 70px 60px;
+}
+.sidbottom{
+    margin-top: 35vh;
+}
+.navsDD{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    opacity: .7;
+}
+
+.navsDD:hover{
+    opacity: 1;
+}
+.navsDD p{
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+.navsDD:hover p{
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+.ddnavBox{
+    height:35px;
+    width:35px;
+    background: white;
+    border-radius: 10px;
+}
+
+.ddactive{
+    opacity: 1;
+}
+.Sidedd p, .Sidedd h1 {
+    color: white;
+}
+
+.dindex{
+    padding: 30px 50px;
+    display: flex;
+    gap: 120px
+}
+.ddboxAA{
+    margin-top: 100px;
+    border-radius: 20px;
+    height: 300px;
+    width: 600px;
+    background: white;
+}
+
+.ddboxAA{
+    padding: 50px;
+}
+.ddboxAA h1,  .ddboxAA p{
+    color: black;
+}
+.ddboxAA h1 span{
+    font-size: 1.5rem;
+    opacity: .6;
+}
+.buttonsDD{
+    margin-top: 30px;
+    display: flex;
+    gap : 30px;
+}
+.bin {
+    background: black;
+}
+
+.userbaxRef p, .userbaxRef h1{
+    color:white;
+}
+.ddref{
+    background: orange;
+    border-radius: 20px;
+    padding: 40px;
+    width: 300px;
+    margin-bottom: 40px;
+}
+.ddef{
+    background: rgb(0, 174, 255);
+    border-radius: 20px;
+    padding: 40px;
+    width: 300px;
+    margin-bottom: 40px;
+}
+.ddef:hover{
+    background: rgba(45, 188, 255, 0.881);
+    transition: 1s;
+}

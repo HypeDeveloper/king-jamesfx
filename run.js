@@ -24,7 +24,7 @@ prompt([
     choices: ['client', 'server', 'client and server', 'build']
   }
 ]).then((a) => {
-  if (a.runs === 'server') {
+  if (a.run === 'server') {
     shell.exec('nodemon index.js')
   }
   if (a.run === "client") {

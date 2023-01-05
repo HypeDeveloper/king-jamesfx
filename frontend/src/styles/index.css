@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    color: black;
+}
+
+.Hero{
+    margin-top: 110px;
+    height: calc(100vh - 110px)
+}
+.Title{
+    font-size: 4rem;
+}
+.Content{
+    font-size: 1.4rem;
+    font-weight: 500;
+    opacity: 1;
+}
+.Subtext{
+    font-size: 1.8rem;
+    padding-bottom: 10px;
+    opacity: .8;
+}
