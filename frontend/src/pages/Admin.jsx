@@ -11,6 +11,7 @@ export function DashboardAdmin() {
     const nav = useNavigate()
     useEffect(() => {
         if (authService.getLogedInAdmin()) {
+            // alert('Logging you in...')
             setLoged(true)
         }
     }, [])
@@ -75,7 +76,8 @@ function TokenIN() {
             alert("Success")
             signA.current.style.display = 'none'
         }).catch((e) => {
-            alert(e.response.data.message)
+            console.log(e)
+            // alert(e.response.data.message)
         })
     }
 
@@ -146,10 +148,10 @@ function SideNavAdmin() {
                 </a>
                 <br />
 
-                <a href="/admin/settings">
+                <a href="" onClick={authService.logoutAdmin}>
                     <div className="navsDD">
                         <div className="ddnavBox"></div>
-                        <p>Settings</p>
+                        <p>Log out</p>
                     </div>
                 </a>
             </div>
@@ -170,7 +172,8 @@ export function AdminIndex() {
 
     }, [])
 
-    async function HandleUsers(){
+    async function HandleUsers() {
+        // if(!authService.getLogedInAdmin()) return
         await aotherService.allUsers(authService.getLogedInAdmin().tokenID).
             then((d) => {
                 console.log(d.users);
@@ -194,7 +197,21 @@ export function AdminIndex() {
                 
             })
     }
-
+    async function handleDelAd() {
+        alert('You are about to DELETE a user')
+        const transData = {
+            id: adata.id
+        }
+        await aotherService.delUser(transData, authService.getLogedInAdmin().tokenID).
+            then((d) => {
+                console.log(d);
+                alert(`DELETED ${props.name}`)
+                props.view1.current.style.display = 'block'
+                props.view2.current.style.display = 'none'
+            }).catch((err) => {
+                console.log(err);
+            })
+    }
     return (
         <>
             <div className="topAD">
@@ -215,7 +232,7 @@ export function AdminIndex() {
                                     {adata.name}
                                 </h1>
                                 <p className="Content">
-                                    john@gmail.com
+                                    #{adata.id}
                                 </p>
                             </div>
                         </div>
@@ -233,8 +250,8 @@ export function AdminIndex() {
                                 </h1>
                             </div>
                             <div className="conts workc">
-                                <p className="Content pinf">#{adata.id}</p>
-                                <button className="ADus">Delete</button>
+                                <p className="Content pinf"></p>
+                                <button className="ADus" onClick={handleDelAd}>Delete</button>
                             </div>
                         </div>
                     </div>
@@ -273,10 +290,11 @@ export function AdminIndex() {
 }
 
 function UsersADDmin(props) {
+    const tab = useRef()
     const [thisData] = useState({
         name: props.name,
         id: props.id,
-        amount: props.ammount,
+        amount: props.amount,
         refcount:props.refcount
     })
     function thisUser() {
@@ -284,32 +302,90 @@ function UsersADDmin(props) {
         props.view2.current.style.display = 'block'
         props.outdata(thisData)
     }
+
+    async function handleDel() {
+        alert('You are about to DELETE a user')
+        const transData = {
+            id: thisData.id
+        }
+        await aotherService.delUser(transData, authService.getLogedInAdmin().tokenID).
+            then((d) => {
+                console.log(d);
+                alert(`DELETED ${props.name}`)
+                props.view1.current.style.display = 'block'
+                props.view2.current.style.display = 'none'
+                tab.current.style.display = 'none'
+            }).catch((err) => {
+                console.log(err);
+            })
+    }
     return (
-        <div className="infAdUS" onClick={thisUser}>
+        <div className="infAdUS" onClick={thisUser} ref={tab}>
             <div className="headUse bind">
                 <p className="Content">{ thisData.name}</p>
                 <p className="Content">#{thisData.id}</p>
                 <p className="Content">${ thisData.amount}</p>
                 <p className="Content">{ thisData.refcount}</p>
-                <button className="ADus">Delete</button>
+                <button className="ADus" onClick={handleDel}>Delete</button>
             </div>
         </div>
     )
 }
 
-export function AdminUsers() {
-    return (
-        <>
-            Mit
-        </>
-    )
-}
+
 export function AdminTrans() {
+    const view1 = useRef()
+    const view2 = useRef()
+    const [data, setData] = useState([]);
+    const [adata, setaData] = useState([]);
+    
+    useEffect(() => {
+        getAllTrans()
+    }, [data]) 
+
+    async function getAllTrans() {
+        // if(!authService.getLogedInAdmin()) return
+        await aotherService.getTransAdmin(authService.getLogedInAdmin().tokenID).
+            then((d) => {
+                setData(d.map((e) => {
+                    return (
+                        <>
+                            <TransADDmin
+                                key={e._id}
+                                name={e.name}
+                                id={e._id}
+                                status={e.status}
+                                transType={e.transType}
+                                view1={view1}
+                                view2={view2}
+                                outdata={setaData}
+                            />
+                            <br />
+                        </>
+                    )
+                }))
+
+            })
+    }
+
+    async function ConfirmTrans() {
+        let setPrice = prompt(`You are about to update ${adata.name} amount, \n add the amount`)
+        if (!setPrice) return
+        const transData = {
+            price: setPrice,
+            orderId: adata.id
+        }
+        await aotherService.confirmTrans(authService.getLogedInAdmin().tokenID, transData).
+            then((d) => {
+                alert(`updated ${adata.name} amount`)
+        })
+    }
+
     return (
         <>
             <div className="topAD">
                 <div className="usersAdd">
-                    {/* <div className="userTotal">
+                    <div className="userTotal" ref={view1}>
                         <p className="Content">Total users Signed In</p>
                         <h1 className="Title">
                             0
@@ -317,16 +393,16 @@ export function AdminTrans() {
                         <p className="Content">
                             click a Transfer to see info
                         </p>
-                    </div> */}
-                    <div className="userTotalp">
+                    </div>
+                    <div className="userTotalp" ref={view2}> 
                         <div className="ustoTop">
                             <div className="Uselogo"></div>
                             <div className="quickIn">
                                 <h1 className="Title cos">
-                                    A user
+                                    {adata.name}
                                 </h1>
                                 <p className="Content">
-                                    #Address
+                                    #EthAddress
                                 </p>
                             </div>
                         </div>
@@ -334,18 +410,18 @@ export function AdminTrans() {
                             <div className="conts">
                                 <p className="Content"><b>Order Id</b></p>
                                 <p className="Content">
-                                    568934754u6j66586
+                                    {adata.id}
                                 </p>
                             </div>
                             <div className="conts">
                                 <p className="Content"><b>Trans Type</b></p>
                                 <h1 className="Title">
-                                    ETH
+                                    {adata.transType}
                                 </h1>
                             </div>
                             <div className="conts workc">
                                 <p className="Content pinf">#Deposit</p>
-                                <button className="ADusd">Confirm Trans</button>
+                                <button className="ADusd" onClick={ConfirmTrans}>Confirm Trans</button>
                             </div>
                         </div>
                     </div>
@@ -361,27 +437,43 @@ export function AdminTrans() {
                     <p className="Content">Name</p>
                     <p className="Content">Order id</p>
                     <p className="Content">Transfer Type</p>
-                    <p className="Content">status</p>
-                    <h6 className="Content nom">Action</h6>
+                    <p className="Content">Status</p>
+                    {/* <h6 className="Content nom">Action</h6> */}
                 </div>
                 <br />
-                <div className="infAdUS">
-                    <div className="headUse bind">
-                        <p className="Content">Obi Festus</p>
-                        <p className="Content">#33443232675734</p>
-                        <p className="Content">ETH - 0x554387557858585097079986899879897585889677</p>
-                        <p className="Content">0</p>
-                        <div>Deposit</div>
-                    </div>
-                </div>
+               
+                {data}
             </div>
         </>
     )
 }
-export function AdminSetting() {
+
+
+function TransADDmin(props) {
+    const [thisData] = useState({
+        name: props.name,
+        id: props.id,
+        status: props.status,
+        transType: props.transType
+    })
+    function thisUser() {
+        if (thisData.status === 'Complete') {
+            alert('this order has been completed')
+            return
+        }
+        props.view1.current.style.display = 'none'
+        props.view2.current.style.display = 'block'
+        props.outdata(thisData)
+    }
     return (
-        <>
-            Mit
-        </>
+        <div className="infAdUS" onClick={thisUser}>
+            <div className="headUse bind">
+                <p className="Content">{thisData.name}</p>
+                <p className="Content">#{thisData.id}</p>
+                <p className="Content">{thisData.transType}</p>
+                <p className="Content" style={{ color: thisData.status === 'pending' ? 'red': "green"}}>{thisData.status}</p>
+                {/* <button className="ADus">Delete</button> */}
+            </div>
+        </div>
     )
 }

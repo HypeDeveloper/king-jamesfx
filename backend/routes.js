@@ -17,7 +17,7 @@ router.get("/users/me", protect, getMyData);
 router.get("/admin/users",protectAdmin, getAllUsers);
 router.post("/admin/new", createNewRole);
 router.post("/admin/signin", loginAdmin);
-router.delete("/admin/del/user", protectAdmin, deleteUser);
+router.post("/admin/del/user", protectAdmin, deleteUser)
 // [end]
 
 

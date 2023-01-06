@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-const API_URL = `/api/users/`;
-const API_URL_ADMIN = `/api/admin/`;
+const API_URL = `http://localhost:8000/api/users/`;
+const API_URL_ADMIN = `http://localhost:8000/api/admin/`;
 // Change Befor Production
 
 // register user
@@ -29,7 +29,9 @@ const login = async (userData) => {
 const logout = () => {
     localStorage.removeItem('user')
 }
-
+const logoutAdmin = () => {
+    localStorage.removeItem('admin')
+}
 
 // get me
 const getMe = async (token) => {
@@ -71,5 +73,6 @@ export const authService = {
     getLogedInUser,
     getMe,
     adminLog,
-    getLogedInAdmin
+    getLogedInAdmin,
+    logoutAdmin
 };

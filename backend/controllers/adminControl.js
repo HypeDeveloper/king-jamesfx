@@ -106,12 +106,12 @@ const loginAdmin = asyncHandler(async (req, res) => {
 // [public, POST /api/admin/del/user]
 // DATA [role, token, rights]
 const deleteUser = asyncHandler(async (req, res) => {
-    const user = await User.findById(req.body.id)
+    const { id } = req.body
+    const user = await User.findByIdAndDelete(id)
 
     if (user) {
-        User.findByIdAndDelete(user._id)
         res.status(200).json({
-            message: 'User deleted'
+            message: 'User deleted',
         })
     }
     else {
@@ -119,6 +119,8 @@ const deleteUser = asyncHandler(async (req, res) => {
             staus: res.statusCode,
             for: "admin delete",
             message: "User does not exist",
+            post: req.body,
+
         });
     }
 })

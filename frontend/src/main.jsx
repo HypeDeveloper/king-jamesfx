@@ -13,7 +13,7 @@ import About from './pages/About'
 import { SignIn, SignUp } from './pages/account'
 import { AuthContextProvider } from './auth/authContext'
 import { DashPackage, DashSupport, DashTrans, Dashboard, Index } from './pages/Dashboard'
-import { AdminIndex, AdminSetting, AdminTrans, AdminUsers, DashboardAdmin } from './pages/Admin'
+import { AdminIndex, AdminTrans, DashboardAdmin } from './pages/Admin'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -35,7 +35,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='/admin' element={<DashboardAdmin />}>
             <Route index element={<AdminIndex />} />
             <Route path='transfers' element={<AdminTrans />} />
-            <Route path='settings' element={<AdminSetting />} />
           </Route>
       </Routes>
       </AuthContextProvider>

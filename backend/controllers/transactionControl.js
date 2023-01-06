@@ -25,17 +25,20 @@ const getAllTransfaresUser = asyncHandler(async (req, res) => {
 // [private, POST /api/users/trans/new]
 // DATA [transType]
 const createTransfare = asyncHandler(async (req, res) => {
-    const { transType} = req.body;
-    if (!transType) {
+    const { transType, name } = req.body;
+    if (!transType || !name) {
         res.status(400).json({
             staus: res.statusCode,
-            for: "create transfare",
+            for: "trans update",
             message: "Fill in all fields",
         });
+        return;
     }
+    
 
     const trans = await Trans.create({
         user: req.user.id,
+        name: name,
         transType: transType,
         status: "pending",
     });

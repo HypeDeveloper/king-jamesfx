@@ -50,6 +50,11 @@ function Dash(){
 }
 
 function SideNav() {
+    const Nav = useNavigate()
+    function logoutU(){
+        authService.logout()
+        Nav('/signin')
+    }
     return (
         <div className="sNanv">
             <div className="sidTop">
@@ -77,15 +82,10 @@ function SideNav() {
                 </a>
                 <br />
 
-                <a href="/dashboard/support">
-                    <div className="navsDD">
-                        <div className="ddnavBox"></div>
-                        <p>Support</p>
-                    </div>
-                </a>
+                
             </div>
             <div className="sidbottom">
-                <a href="/dashboard/support">
+                <a href="" onClick={logoutU}>
                     <div className="navsDD">
                         <div className="ddnavBox"></div>
                         <p>Logout</p>
@@ -180,8 +180,9 @@ export function Index() {
                             ${data.amount}<span className="pin">USD</span>
                         </h1>
                         <div className="buttonsDD">
-                            <button>Deposit An Amonunt</button>
-                            <button className="bin">Withdraw</button>
+                            <a href="/dashboard/transfers"><button>Deposit An Amonunt</button></a>
+                            <a href="/dashboard/transfers"><button className="bin">Withdraw</button></a>
+                            
                         </div>
                     </div>
                     <div className="othBB">

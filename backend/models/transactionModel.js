@@ -7,6 +7,10 @@ const TarnsactionSchema = mongoose.Schema(
             ref: "User",
             required: true,
         },
+        name: {
+            type: String,
+            required: true,
+        },
         transType: {
             type: String,
             required: true,

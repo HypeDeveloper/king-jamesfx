@@ -1,5 +1,6 @@
 .dashboard{
     background-color: black;
+    min-height: 100vh;
     /* overflow: hidden; */
     /* zoom : 80%; */
 
@@ -162,4 +163,7 @@
 
 .bon{
     font-size: 3rem;
+}
+.headUse p{
+    color: black
 }
