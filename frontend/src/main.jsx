@@ -8,10 +8,12 @@ import './styles/index.css'
 import './styles/components.css'
 import './styles/home.css'
 import './styles/dashboard.css'
+import './styles/Admin.css'
 import About from './pages/About'
 import { SignIn, SignUp } from './pages/account'
 import { AuthContextProvider } from './auth/authContext'
 import { DashPackage, DashSupport, DashTrans, Dashboard, Index } from './pages/Dashboard'
+import { AdminIndex, AdminSetting, AdminTrans, AdminUsers, DashboardAdmin } from './pages/Admin'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -30,6 +32,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path='transfers' element={<DashTrans />} />
             <Route path='support' element={<DashSupport />} />
         </Route>
+          <Route path='/admin' element={<DashboardAdmin />}>
+            <Route index element={<AdminIndex />} />
+            <Route path='transfers' element={<AdminTrans />} />
+            <Route path='settings' element={<AdminSetting />} />
+          </Route>
       </Routes>
       </AuthContextProvider>
     </BrowserRouter>

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-const API_URL = `http://localhost:8000/api/users/`;
-const API_URL_ADMIN = `http://localhost:8000/api/admin/`;
+const API_URL = `/api/users/`;
+const API_URL_ADMIN = `/api/admin/`;
 // Change Befor Production
 
 // register user
@@ -49,10 +49,27 @@ const getLogedInUser = () => {
     return logedUser;
 };
 
+// Admin login
+const adminLog = async (adminData) => {
+    const res = await axios.post(API_URL_ADMIN + 'signin', adminData);
+
+    if (res.data) {
+        localStorage.setItem("admin", JSON.stringify(res.data));
+    }
+    return res.data;
+} 
+// Loged in admin
+const getLogedInAdmin = () => {
+    let logedUser = JSON.parse(localStorage.getItem("admin"));
+    return logedUser;
+};
+
 export const authService = {
     register,
     login,
     logout,
     getLogedInUser,
     getMe,
+    adminLog,
+    getLogedInAdmin
 };

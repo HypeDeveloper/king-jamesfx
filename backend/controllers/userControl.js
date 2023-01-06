@@ -178,7 +178,7 @@ const getMyData = asyncHandler(async (req, res) => {
 })
 
 // Get all users
-// [private, GET /api/users/all]
+// [private, GET /api/admin/users]
 // DATA [adminTOKEN]
 const getAllUsers = asyncHandler(async (req, res) => {
     const users = await User.find().select("-password");

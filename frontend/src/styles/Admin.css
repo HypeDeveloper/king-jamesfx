@@ -1,0 +1,124 @@
+.ASign{
+    height: 100vh;
+    position :fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    gap: 100px;
+    /* display: none; */
+}
+.ASign form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.topAD{
+    display: flex;
+    gap: 50px;
+}
+.usersAdd{
+    zoom: 80%;
+}
+.userTotal{
+    height:250px;
+    width:600px;
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+}
+.refCoi{
+    border-radius: 20px;
+    background: #fff;
+    padding: 30px 50px;
+}
+
+.headUse{
+    background: white;
+    padding: 20px 40px;
+    border-radius: 20px;
+    display: flex;
+    zoom: 80%;
+    align-items: center;
+    transition: .5s;
+}
+.bind:hover{
+    background: rgb(227, 227, 227);
+    transition: 1s;
+    padding: 30px 40px;
+    border-radius: 20px;
+    /* zoom: 90%; */
+    
+}
+.headUse p{
+    width: 280px;
+    font-size: 1.2rem;
+    overflow: hidden;
+    padding: 10px;
+}
+.nom{
+    width: 0;
+
+}
+.ADus{
+    background: red;
+}
+.ADusd{
+    background: green;
+}
+.usersSection{
+    margin-top: 20px;
+}
+.usersSection .von{
+    padding: 20px;
+    color: white;
+}
+
+
+.userTotalp{
+    height:250px;
+    width:600px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    display: none;
+}
+.ustoTop{
+    display: flex;
+    align-items: center;
+    gap: 30px
+}
+.Uselogo{
+    height: 70px;
+    width: 70px;
+    background: gray;
+    border-radius: 20px;
+}
+.quickIn{
+    zoom: 70%;
+}
+.usetoBon{
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    zoom: 80%;
+    gap: 30px;
+}
+.conts{
+    width: 200px;
+}
+.conts h1{
+    font-size: 3rem;
+}
+.pinf{
+    text-align:  right;
+    padding-bottom: 10px;
+}
+.workc{
+    display: flex;
+    flex-direction: column;
+}
+.headUse div{
+    font-size: 1.3rem;
+}
