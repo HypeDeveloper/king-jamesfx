@@ -12,7 +12,7 @@ import './styles/Admin.css'
 import About from './pages/About'
 import { SignIn, SignUp } from './pages/account'
 import { AuthContextProvider } from './auth/authContext'
-import { DashPackage, DashSupport, DashTrans, Dashboard, Index } from './pages/Dashboard'
+import { DashPackage,DashTrans, Dashboard, Index } from './pages/Dashboard'
 import { AdminIndex, AdminTrans, DashboardAdmin } from './pages/Admin'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -30,7 +30,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route index element={<Index />} />
             <Route path='package' element={<DashPackage />} />
             <Route path='transfers' element={<DashTrans />} />
-            <Route path='support' element={<DashSupport />} />
         </Route>
           <Route path='/admin' element={<DashboardAdmin />}>
             <Route index element={<AdminIndex />} />

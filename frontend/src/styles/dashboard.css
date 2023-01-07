@@ -167,3 +167,50 @@
 .headUse p{
     color: black
 }
+
+.prompt{
+    position: fixed;
+    z-index: 50px;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.879);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    left: 0;
+}
+
+.pp-box{
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction : column;
+    gap: 20px;
+}
+.pp-box button{
+    cursor: pointer;
+}
+.pp-box button:hover{
+    background: black;
+    color: white;
+}
+.pp-addr{
+    margin: 23px 5px 5px;
+    padding: 3px;
+    border-radius: 30px;
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+.pp-text{
+    padding-top: 8px;
+
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+    .sNanv{
+        display: none;
+    }
+}

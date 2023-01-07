@@ -52,7 +52,7 @@ const getTransUser = async (token) => {
 };
 
 // User create trans
-const createTrans = async (token, transData) => {
+const createTrans = async (transData, token) => {
     const config = {
         headers: {
             Authorization: `Bearer ${token}`,

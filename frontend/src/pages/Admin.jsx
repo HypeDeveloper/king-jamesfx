@@ -378,6 +378,7 @@ export function AdminTrans() {
         await aotherService.confirmTrans(authService.getLogedInAdmin().tokenID, transData).
             then((d) => {
                 alert(`updated ${adata.name} amount`)
+                getAllTrans()
         })
     }
 

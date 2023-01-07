@@ -17,7 +17,15 @@ const allTransfaresAdmin = asyncHandler(async (req, res) => {
 // DATA []
 const getAllTransfaresUser = asyncHandler(async (req, res) => {
     const trans = await Trans.find({ user: req.user.id });
-    res.status(200).json(trans);
+    if(trans){
+        res.status(200).json(trans);
+    } else {
+       res.status(400).json({
+           staus: res.statusCode,
+           for: "trans update",
+           message: "NO data",
+       }); 
+    }
 });
 
 
