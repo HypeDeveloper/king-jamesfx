@@ -13,6 +13,7 @@
     width: 400px;
 }
 .Home-Top-wrap{
+    background: url('../assets/images/bgkngfx.png');
     height: calc(90vh - 110px);
     width: 100%;
     display: flex;
@@ -70,7 +71,7 @@
 .infoRight-box{
     height: 70vh;
     width: 80vh;
-    background: orange;
+    /* background: orange; */
 }
 .moreInfo{
     margin-top: 30vh;
@@ -117,7 +118,7 @@
     align-items: center;
     gap: 30px;
     width: 300px;
-    height: 280px;
+    height: fit-content;
 }
 .fet-bText{
     color:white;
@@ -156,6 +157,21 @@
     height: 65vh;
     margin-top: 60px;
     width:100vh;
+}
+.justInfo-wrapImg img{
+    width:100%;
+}
+.bullishImg img{
+    width:90%;
+
+}
+.infoUs-wrap img{
+    width:90%;
+
+}
+.comtImg img{
+    width:100%;
+
 }
 
 
@@ -238,7 +254,7 @@
     width:380px;
 }
 .planBox{
-    background: #32FF9D;
+    background: #000;
     width: fit-content;
     padding: 30px;
     border-radius: 30px;
@@ -247,10 +263,12 @@
     display: flex;
     gap: 80px;
 }
+.planBox-wrapIco p{
+    color: white;
+}
 .planBox-icon{
     width: 50px;
     height: 50px;
-    background: white;
     border-radius: 15px;
 }
 .planRange{
@@ -266,6 +284,9 @@
     gap: 50px;
     align-items: center;
     
+}
+.planRange h2, .planRange p{
+    color: white;
 }
 
 .Last{
@@ -358,4 +379,44 @@
     width: 350px;
     font-size: 1rem;
 
+}
+
+
+.testiImg {
+    overflow : hidden;
+
+}
+.testiImg {
+    overflow : hidden;
+
+}
+.testiImg img{
+    width: 100%;
+}
+.infoRight-box img{
+    width :120%;
+}
+body{
+    width:100%;
+    overflow-x: hidden;
+}
+.mk{
+    display: flex;
+    position: relative;
+}
+.mk img{
+    position: absolute;
+    bottom: 80px;
+    right: 90px;
+    width: 400px;
+    height: 400px;
+}
+.infoWrap-Icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.infoWrap-Icon img{
+    width: 80%;
 }

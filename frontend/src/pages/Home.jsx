@@ -2,7 +2,17 @@ import { Button } from "./components/Form";
 import { useAuth } from "../auth/authContext";
 import { useNavigate } from "react-router-dom";
 
-
+import act1 from '../assets/images/icon2.png'
+import act2 from '../assets/images/icon3.png'
+import Bullish from '../assets/images/bullimage.png'
+import phone from '../assets/images/wallet-interest.png'
+import legal from '../assets/images/cert04.png'
+import mg2 from '../assets/images/mg09.jpg'
+import ax2 from '../assets/images/ax2.png'
+import pin1 from '../assets/images/pin1.jpg'
+import pin2 from '../assets/images/pin2.jpg'
+import pin3 from '../assets/images/pin3.jpg'
+import grr from '../assets/images/sh6.png'
 
 export function Home() {
     const { user } = useAuth()
@@ -15,7 +25,7 @@ export function Home() {
     }, [user])
     return(
         <>
-            <div className="Hero">
+            <div className="Hero mk">
                 <div className="Home-Top">
                     <div className="Home-Top-wrap">
                         <h1 className="Title Home-Header">
@@ -31,13 +41,14 @@ export function Home() {
                         </div>
                     </div>
                 </div>
+                <img className={'Guaranteed'} src={grr}/>
             </div>
 
             {/* Others */}
 
-            <div className="CryptoLine">
+            {/* <div className="CryptoLine">
 
-            </div>
+            </div> */}
 
 
             <div className="infoUs">
@@ -47,7 +58,9 @@ export function Home() {
                 <div className="infoUs-wrap">
                     <div className="infoLeft-wrap">
                         <div className="info-box">
-                            <div className="infoWrap-Icon"></div>
+                            <div className="infoWrap-Icon">
+                                <img src={act1}/>
+                            </div>
                             <div className="infoWrap-Text">
                                 <h2 className="Subtext Info-wrap-text-head">
                                     Industry best practices
@@ -58,7 +71,9 @@ export function Home() {
                             </div>
                         </div>
                         <div className="info-box">
-                            <div className="infoWrap-Icon"></div>
+                            <div className="infoWrap-Icon">
+                                <img src={act2}/>
+                            </div>
                             <div className="infoWrap-Text">
                                 <h2 className="Subtext Info-wrap-text-head">
                                     Amazing Support
@@ -71,13 +86,13 @@ export function Home() {
                     </div>
                     <div className="infoRight-wrap">
                         <div className="infoRight-box">
-                            <img src="/Coins" alt="" /> {/* Add Image*/}
+                            <img src={mg2} alt="" /> 
                         </div>
                     </div>
                 </div>
                 <div className="moreInfo">
                     <div className="bullishImg">
-                        <img src="Bullish" alt="" />
+                        <img src={Bullish} alt="" />
                     </div>
                     <div className="moreInfo-Texts">
                         <h1 className="Title morInfo-title">
@@ -100,7 +115,6 @@ export function Home() {
                 <div className="fet-stuff">
                     <div className="fet-stuffbox">
                         <div className="fet-wrapStuffbox">
-                            <div className="fet-stuffIcon"></div>
                             <h2 className="Subtext fet-bText">
                                 Security
                             </h2>
@@ -112,7 +126,6 @@ export function Home() {
                     </div>
                     <div className="fet-stuffbox">
                         <div className="fet-wrapStuffbox">
-                            <div className="fet-stuffIcon"></div>
                             <h2 className="Subtext fet-bText">
                                 Transperency
                             </h2>
@@ -124,7 +137,6 @@ export function Home() {
                     </div>
                     <div className="fet-stuffbox">
                         <div className="fet-wrapStuffbox">
-                            <div className="fet-stuffIcon"></div>
                             <h2 className="Subtext fet-bText">
                                 Protection
                             </h2>
@@ -162,7 +174,7 @@ export function Home() {
                     </div>
                     <div className="juustInfo-Img">
                         <div className="justInfo-wrapImg">
-
+                            <img src={phone}/>
                         </div>
                     </div>
                 </div>
@@ -178,7 +190,7 @@ export function Home() {
                     </p>
                 </div>
                 <div className="comtImg">
-                    img
+                    <img src={legal}/>
                 </div>
             </div>
             
@@ -193,7 +205,9 @@ export function Home() {
                 <div className="testi-wrap">
                     <div className="testiBox">
                         <div className="testiBoxWrap">
-                            <div className="testiImg"></div>
+                            <div className="testiImg">
+                                <img src={pin1}/>
+                            </div>
                             <h2 className="Subtitle testiTit">Thomas Doe</h2>
                             <p className="Content testiSub">The best exchange that i have used so far</p>
                         </div>
@@ -201,7 +215,10 @@ export function Home() {
 
                     <div className="testiBox">
                         <div className="testiBoxWrap">
-                            <div className="testiImg"></div>
+                            <div className="testiImg">
+                                <img src={pin2}/>
+                                
+                            </div>
                             <h2 className="Subtitle testiTit">Thomas Doe</h2>
                             <p className="Content testiSub">The best exchange that i have used so far</p>
                         </div>
@@ -209,7 +226,10 @@ export function Home() {
 
                     <div className="testiBox">
                         <div className="testiBoxWrap">
-                            <div className="testiImg"></div>
+                            <div className="testiImg">
+                                <img src={pin3}/>
+
+                            </div>
                             <h2 className="Subtitle testiTit">Thomas Doe</h2>
                             <p className="Content testiSub">The best exchange that i have used so far</p>
                         </div>
@@ -223,7 +243,10 @@ export function Home() {
                         <div className="planBox">
                             <div className="planBox-wrap">
                                 <div className="planBox-wrapIco">
-                                    <div className="planBox-icon"></div>
+                                    <div className="planBox-icon">
+                                <img src={ax2}/>
+
+                                    </div>
                                     <p className="Content">10%</p>
                                 </div>
                                 <div className="planRange">
@@ -240,15 +263,18 @@ export function Home() {
                         <div className="planBox">
                             <div className="planBox-wrap">
                                 <div className="planBox-wrapIco">
-                                    <div className="planBox-icon"></div>
-                                    <p className="Content">10%</p>
+                                    <div className="planBox-icon">
+                                <img src={ax2}/>
+
+                                    </div>
+                                    <p className="Content">20%</p>
                                 </div>
                                 <div className="planRange">
-                                    <h2 className="Subtitle">Stater</h2>
+                                    <h2 className="Subtitle">Gold</h2>
 
                                     <p className="Content">
-                                        MIN : $100 <br />
-                                        Max : $499
+                                        MIN : $500 <br />
+                                        Max : $4999
                                     </p>
                                 </div>
                                 <a href="/SignIn"><Button>Select</Button></a>
@@ -260,15 +286,18 @@ export function Home() {
                         <div className="planBox">
                             <div className="planBox-wrap">
                                 <div className="planBox-wrapIco">
-                                    <div className="planBox-icon"></div>
-                                    <p className="Content">10%</p>
+                                    <div className="planBox-icon">
+                                <img src={ax2}/>
+
+                                    </div>
+                                    <p className="Content">30%</p>
                                 </div>
                                 <div className="planRange">
-                                    <h2 className="Subtitle">Stater</h2>
+                                    <h2 className="Subtitle">Diamond</h2>
 
                                     <p className="Content">
-                                        MIN : $100 <br />
-                                        Max : $499
+                                        MIN : $5000 <br />
+                                        Max : $19999
                                     </p>
                                 </div>
                                 <a href="/SignIn"><Button>Select</Button></a>
@@ -278,15 +307,18 @@ export function Home() {
                         <div className="planBox">
                             <div className="planBox-wrap">
                                 <div className="planBox-wrapIco">
-                                    <div className="planBox-icon"></div>
-                                    <p className="Content">10%</p>
+                                    <div className="planBox-icon">
+                                <img src={ax2}/>
+
+                                    </div>
+                                    <p className="Content">40%</p>
                                 </div>
                                 <div className="planRange">
-                                    <h2 className="Subtitle">Stater</h2>
+                                    <h2 className="Subtitle">Master</h2>
 
                                     <p className="Content">
-                                        MIN : $100 <br />
-                                        Max : $499
+                                        MIN : $5000 <br />
+                                        Max : $19999
                                     </p>
                                 </div>
                                 <a href="/SignIn"><Button>Select</Button></a>
@@ -340,9 +372,7 @@ export function Footer() {
                     Address: Carmelite House, 50 Victoria <br/> Embankment, Temple, London EC4Y 0DZ, United <br/> Kingdom
                     <br/>Email: Kingjamesfx63@gmail.com
                 </p>
-                <h2 className="Subtitle">
-                    Quick Links
-                </h2>
+                <br/>
                 
             </div>
         </div>
