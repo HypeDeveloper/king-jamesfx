@@ -54,6 +54,14 @@ button{
 }
 
 @media screen  and (max-width:600px){
+        .navBar{
+        padding: 20px 90px 20px;
+        background: white;
+        position: fixed;
+        /* width:fit-content; */
+        top: 0;
+        z-index: 10000;
+    }
     .navList{
         display: flex;
         gap: 10px;

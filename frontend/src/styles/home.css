@@ -247,7 +247,7 @@
     padding: 0 100px 0 0;
 }
 .plans{
-    height: 90vh;
+    /* height: 90vh; */
     width: 120vh;
     margin-top: 10vh;
 }
@@ -442,28 +442,41 @@ body{
 @media screen and (max-width: 900px){
     .Home-Top-wrap{
         height: calc(100vh - 110px);
-        padding-left: 60px;
-        zoom: 87%;
+        padding-left: 30px;
+        zoom: 85%;
     }
     .Home-Header, .fet-title, .justInfo-title, .Last Title{
         width: 100%;
         zoom: 89%;
 
     }
+    .some-OtherSTF{
+        zoom: 89%;
+    }
     .infoLeft-wrap{
-        margin-left: 80px;
+        margin-left: 30px;
         padding-top: 100px;
+        zoom: 90%;
+    }
+    .info-box {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
     }
     .morInfo-title{
         width: 550px;
         zoom: 89%;
 
     }
+    .infoRight-box{
+        display:none;
+    }
     .moreInfo{
         margin-top: 30vh;
         display: flex;
         justify-content: space-between;
         padding: 0px 50px 100px;
+        zoom:80%;
     }
     .moreInfo-Content{
         padding-top: 30px;
@@ -476,7 +489,7 @@ body{
         gap: 30px;
     }
     .features{
-        padding: 90px 80px;
+        padding: 90px 15px;
         background: rgb(255, 185, 55);
     }
     .some-text{
@@ -488,7 +501,7 @@ body{
     }
     .justInfo{
         margin-top: 35vh;
-        padding: 0px 0px 230px 30px;
+        padding: 0px 0px 30px 30px;
     }
     .comtImg{
         width: 60vh;
@@ -501,6 +514,9 @@ body{
     }
     .comtWrap h2{
         padding: 30px 30px 10px;
+    }
+    .testi{
+        zoom: 80%;
     }
     .testi-wrap{
         display: flex;
@@ -516,8 +532,9 @@ body{
         flex-direction: column-reverse;
         align-items: center;
         padding: 0 00px 0 0;
+        height: fit-content;
     }
-    .plans{
+    .planText{
         zoom: 80%;
     }
     .Last h1{
@@ -576,9 +593,37 @@ body{
         padding-bottom: 120px;
 
     }
+    .fx{
+    display: flex;
+    flex-direction: column;
+        gap: 50px;
+    }
+    .comt{
+        zoom: 80%;
+    }
+    .justInfo-wrapImg{
+        zoom: 80%;
+
+        background: orange;
+        height: 65vh;
+        margin-top: 60px;
+        width:60vh;
+    }
+    .juustInfo-Text{
+        zoom: 80%;
+    }
 }
 
 @media screen and (max-width: 500px){
+    
+    .morInfo-title{
+        width: 500px;
+        zoom: 79%;
+
+    }
+}
+
+@media screen and (max-width: 300px){
     
     .morInfo-title{
         width: 500px;

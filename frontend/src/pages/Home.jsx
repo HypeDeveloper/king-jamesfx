@@ -25,6 +25,7 @@ export function Home() {
     }, [user])
     return(
         <>
+        
             <div className="Hero mk">
                 <div className="Home-Top">
                     <div className="Home-Top-wrap">
