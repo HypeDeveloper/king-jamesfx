@@ -35,6 +35,10 @@ const UserSchema = mongoose.Schema(
             type: Number,
             required: true,
         },
+        pack: {
+            type: String,
+            required: true,
+        },
         amount: {
             type: Number,
             required: true,

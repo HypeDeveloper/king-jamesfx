@@ -53,4 +53,12 @@ button{
     cursor: pointer;
 }
 
-
+@media screen  and (max-width:600px){
+    .navList{
+        display: flex;
+        gap: 10px;
+    }
+    .navBar{
+        padding: 20px 30px 20px;
+    }
+}

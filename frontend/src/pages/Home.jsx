@@ -41,7 +41,7 @@ export function Home() {
                         </div>
                     </div>
                 </div>
-                <img className={'Guaranteed'} src={grr}/>
+                {/* <img className={'Guaranteed'} src={grr}/> */}
             </div>
 
             {/* Others */}
@@ -110,7 +110,7 @@ export function Home() {
                     Our Core Features
                 </h1>
                 <p className="Content fet-title">
-                    We give the best tn the following areas
+                    We give the best in the following areas
                 </p>
                 <div className="fet-stuff">
                     <div className="fet-stuffbox">
@@ -228,6 +228,16 @@ export function Home() {
                         <div className="testiBoxWrap">
                             <div className="testiImg">
                                 <img src={pin3}/>
+
+                            </div>
+                            <h2 className="Subtitle testiTit">Thomas Doe</h2>
+                            <p className="Content testiSub">The best exchange that i have used so far</p>
+                        </div>
+                    </div>
+                    <div className="testiBox">
+                        <div className="testiBoxWrap">
+                            <div className="testiImg">
+                                <img src={pin3} />
 
                             </div>
                             <h2 className="Subtitle testiTit">Thomas Doe</h2>

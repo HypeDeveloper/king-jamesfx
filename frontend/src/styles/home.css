@@ -13,7 +13,6 @@
     width: 400px;
 }
 .Home-Top-wrap{
-    background: url('../assets/images/bgkngfx.png');
     height: calc(90vh - 110px);
     width: 100%;
     display: flex;
@@ -55,7 +54,7 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
-    margin-left: 220px;
+    margin-left: 120px;
     padding-top: 100px;
 }
 .info-box{
@@ -132,6 +131,9 @@
     gap: 25px;
     margin-top: 12vh;
 }
+.some-OtherSTF h2{
+    text-align: center;
+}
 .some-text{
     width: 500px;
     text-align: center;
@@ -203,6 +205,8 @@
 }
 .testi-wrap{
     display: flex;
+        flex-wrap: wrap;
+        padding:50px 20%;
     justify-content: space-between;
     gap:90px;
 }
@@ -419,4 +423,166 @@ body{
 }
 .infoWrap-Icon img{
     width: 80%;
+}
+
+.pack{
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+    padding: 60px;
+}
+.pack .planBox{
+    background: white;
+}
+.pack p ,.pack h2{
+    color: black;
+}
+
+
+@media screen and (max-width: 900px){
+    .Home-Top-wrap{
+        height: calc(100vh - 110px);
+        padding-left: 60px;
+        zoom: 87%;
+    }
+    .Home-Header, .fet-title, .justInfo-title, .Last Title{
+        width: 100%;
+        zoom: 89%;
+
+    }
+    .infoLeft-wrap{
+        margin-left: 80px;
+        padding-top: 100px;
+    }
+    .morInfo-title{
+        width: 550px;
+        zoom: 89%;
+
+    }
+    .moreInfo{
+        margin-top: 30vh;
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 50px 100px;
+    }
+    .moreInfo-Content{
+        padding-top: 30px;
+        width: 400px;
+    }
+    .fet-stuff{
+        flex-direction:column;
+        justify-items: center;
+        zoom: 90%;
+        gap: 30px;
+    }
+    .features{
+        padding: 90px 80px;
+        background: rgb(255, 185, 55);
+    }
+    .some-text{
+        width: 400px;
+        text-align: center;
+    }
+    .justInfo-wrap{
+        display: block;
+    }
+    .justInfo{
+        margin-top: 35vh;
+        padding: 0px 0px 230px 30px;
+    }
+    .comtImg{
+        width: 60vh;
+        background: none;
+        height: 50vh;
+    }
+    .cont-sub, .comtWrap h2{
+        width: 450px;
+        padding: 30px 30px 80px;
+    }
+    .comtWrap h2{
+        padding: 30px 30px 10px;
+    }
+    .testi-wrap{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding:50px 90%;
+        gap:90px;
+    }
+    .plan{
+        display: flex;
+        justify-content: center;
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 0 00px 0 0;
+    }
+    .plans{
+        zoom: 80%;
+    }
+    .Last h1{
+        width: 100%;
+        zoom: 70%;
+        text-align: center;
+        padding-bottom: 40px;
+    }
+    .Last{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 50vh 20px 280px;
+    }
+    .footer .icon img{
+        width: 100px;
+        transform: translateY(-0px);
+        opacity: .7;
+        padding-bottom: 30px;
+    }
+    .footer{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 60px 40px;
+        background:black;
+        overflow: hidden;
+        height: fit-content;
+    }
+    .footerInfo h2, .footerInfo p{
+        text-align: left;
+        color: white;
+    }
+    .about{
+        margin-top: 200px;
+        padding: 0 30px 200px;
+    }
+    .sign{
+    display: block;
+
+    margin-top: 90px;
+}
+    .signboxImg{
+        display: none;
+    }
+    .signSection{
+        height: calc(100vh - 110px);
+        color: white;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        right: 0;
+        overflow-y: scroll;
+        padding-bottom: 120px;
+
+    }
+}
+
+@media screen and (max-width: 500px){
+    
+    .morInfo-title{
+        width: 500px;
+        zoom: 79%;
+
+    }
 }

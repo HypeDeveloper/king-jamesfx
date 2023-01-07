@@ -6,8 +6,12 @@
 
 }
 .dnav{
+    position: fixed;
+    z-index: 1000;
     padding: 20px 70px;
     zoom: 85%;
+    width: 100%;
+    background: black;
 }
 .dnav-wrap{
     display: flex;
@@ -28,6 +32,7 @@
 }
 
 .dbottom{
+    padding-top: 100px;
     display: flex;
     gap: 40px;
 }
@@ -144,6 +149,7 @@
 
 .AmountBox{
     display: flex;
+    flex-wrap: wrap;
     gap: 50px;
     margin-top: 80px;
     /* background: pink; */
@@ -209,8 +215,34 @@
     font-size: 1rem;
 }
 
-@media screen and (max-width: 800px) {
-    .sNanv{
+@media screen and (max-width: 1200px) {
+    .sided{
         display: none;
+        position: fixed;
+        background: black;
+        width: 100%;
+        height: 100vh;
+        top:0;
+       z-index: 90;
+    }
+    .othersdout{
+        width:100vw;
+    }
+    .AmountBox{
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        margin-top: 80px;
+        /* background: pink; */
+    }
+    .sNanv{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        zoom: 110%;
+        padding: 150px 0px 20px 60px;
+    }
+    .sidbottom{
+        margin-top: 30vh;
     }
 }

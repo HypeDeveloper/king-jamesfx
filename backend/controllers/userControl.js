@@ -115,6 +115,7 @@ const signUpUser = asyncHandler(async (req, res) => {
         inviteRefCodeID: inviteId,
         inviteCount: 0,
         amount:0,
+        pack: 'Starter'
     });
 
     if (user) {
@@ -125,6 +126,9 @@ const signUpUser = asyncHandler(async (req, res) => {
                 username: user.username,
                 email: user.email,
                 name: user.name,
+                userRefCode: user.userRefCode,
+                pack: user.pack,
+                inviteCount: user.inviteCount,
             },
         });
     } else {
@@ -194,9 +198,40 @@ const generateJWT = (id) => {
     });
 };
 
+const updatePackage = asyncHandler(async(req, res)=>{
+    const {updateTo} = req.body
+    const {id} = req.user.id
+    if(!updateTo){
+        res.status(400).json({
+            message: 'field not complete'
+        })
+        return
+    }
+    if(!id){
+        res.status(400).json({
+            message: 'no id'
+        })
+        return
+    }
+    const updateUserpack = await User.findByIdAndUpdate(id, {pack: updateTo});
+
+    if(updateUserpack){
+        res.status(201).json({
+            message: 'Upgrade success'
+        })
+    }else{
+        res.status(400).json({
+            message: 'null'
+        })
+    }
+
+
+})
+
 module.exports = {
     signUpUser,
     signInUser,
     getAllUsers,
     getMyData,
+    updatePackage
 };

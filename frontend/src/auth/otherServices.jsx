@@ -4,6 +4,17 @@ const API_URL = `/api/users/`;
 
 
 
+const updatepackage = async (token, data) => {
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    };
+    const res = await axios.post(API_URL + "package", data ,config)
+
+    return res.data;
+};
+
 const allUsers = async (token) => {
     const config = {
         headers: {
@@ -83,4 +94,5 @@ export const aotherService = {
     getTransUser,
     createTrans,
     confirmTrans,
+    updatepackage
 };

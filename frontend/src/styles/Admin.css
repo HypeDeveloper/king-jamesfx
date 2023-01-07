@@ -33,7 +33,9 @@
     background: #fff;
     padding: 30px 50px;
 }
-
+.othersdout{
+    padding: 20px;
+}
 .headUse{
     background: white;
     padding: 20px 40px;
@@ -121,4 +123,8 @@
 }
 .headUse div{
     font-size: 1.3rem;
+}
+
+@media screen and (max-width: 900px) {
+
 }

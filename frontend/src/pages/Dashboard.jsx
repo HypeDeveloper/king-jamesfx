@@ -115,13 +115,7 @@ function DashbordNav() {
 }
 
 
-export function DashPackage() {
-    return (
-        <h1 className="Title">
-            CommingSoon : Package
-        </h1>
-    )
-}
+
 export function DashTrans() {
 
 const view1 = useRef()
@@ -421,17 +415,135 @@ export function Index() {
                     <div className="othBB">
                         <p className="Content">Total Referals</p>
                         <h1 className="Title">
-                            0
+                            {data.inviteCount}
                         </h1>
                         <br/>
-                        <button>My Ref Code</button>
+                        <button>{data.userRefCode}</button>
                     </div>
                     <div className="othBB bon">
                         <p className="Content">Active plan</p>
                         <h1 className="Title bon">
-                            Starter Pack
+                            {data.pack} <br/> Pack
                         </h1>
                     </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+import ax2 from '../assets/images/ax2.png'
+import { Button } from "./components/Form";
+
+
+export function DashPackage() {
+    async function UpPack(updateName){
+        await aotherService.updatepackage(
+            authService.getLogedInUser(), 
+            {updateTo: updateName}
+        ).then(()=>{
+            alert('Success')
+        }).catch((err)=>{
+            console.log(err)
+        })
+    }
+
+    function handle1(){
+        UpPack('Starter')
+    }
+    function handle2(){
+        UpPack('Gold')
+    }
+    function handle3(){
+        UpPack('Diamond')
+    }
+    function handle4(){
+        UpPack('Master')
+    }
+
+    return (
+        <div className={'pack'}>
+            <div className="planBox">
+                <div className="planBox-wrap">
+                    <div className="planBox-wrapIco">
+                        <div className="planBox-icon">
+                    <img src={ax2}/>
+
+                        </div>
+                        <p className="Content">10%</p>
+                    </div>
+                    <div className="planRange">
+                        <h2 className="Subtitle">Stater</h2>
+
+                        <p className="Content">
+                            MIN : $100 <br />
+                            Max : $499
+                        </p>
+                    </div>
+                    <button onClick={handle1}>Select</button>
+                </div>
+            </div>
+            <div className="planBox">
+                <div className="planBox-wrap">
+                    <div className="planBox-wrapIco">
+                        <div className="planBox-icon">
+                    <img src={ax2}/>
+
+                        </div>
+                        <p className="Content">20%</p>
+                    </div>
+                    <div className="planRange">
+                        <h2 className="Subtitle">Gold</h2>
+
+                        <p className="Content">
+                            MIN : $500 <br />
+                            Max : $4999
+                        </p>
+                    </div>
+                    <button onClick={handle2}>Select</button>
+
+                </div>
+            </div>
+            <div className="planBox">
+                <div className="planBox-wrap">
+                    <div className="planBox-wrapIco">
+                        <div className="planBox-icon">
+                    <img src={ax2}/>
+
+                        </div>
+                        <p className="Content">30%</p>
+                    </div>
+                    <div className="planRange">
+                        <h2 className="Subtitle">Diamond</h2>
+
+                        <p className="Content">
+                            MIN : $5000 <br />
+                            Max : $19999
+                        </p>
+                    </div>
+                    <button onClick={handle3}>Select</button>
+
+                </div>
+            </div>
+            <div className="planBox">
+                <div className="planBox-wrap">
+                    <div className="planBox-wrapIco">
+                        <div className="planBox-icon">
+                    <img src={ax2}/>
+
+                        </div>
+                        <p className="Content">40%</p>
+                    </div>
+                    <div className="planRange">
+                        <h2 className="Subtitle">Master</h2>
+
+                        <p className="Content">
+                            MIN : $5000 <br />
+                            Max : $19999
+                        </p>
+                    </div>
+                    <button onClick={handle4}>Select</button>
+
                 </div>
             </div>
         </div>
