@@ -24,7 +24,7 @@ export function Home() {
         }
     }, [user])
     return(
-        <>
+        <div className={'home'}>
         
             <div className="Hero mk">
                 <div className="Home-Top">
@@ -38,7 +38,7 @@ export function Home() {
                         </p>
                         <div className="Home-Wrap-other">
                             <a href="signUp"><Button>Get Started</Button></a>
-                            <p>Get to Know Us</p>
+                            <p style={{color: 'white'}}>Get to Know Us</p>
                         </div>
                     </div>
                 </div>
@@ -362,7 +362,7 @@ export function Home() {
             </div>
 
             <Footer/>
-        </>
+        </div >
     )
 }
 

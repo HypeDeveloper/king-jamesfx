@@ -5,12 +5,19 @@
 .about p{
     padding-top: 60px;
 }
+.mk{
+    background-image: url(../assets/images/bgkingfx.png);
+    /* filter: brightness(50%); */
+    background-size: cover;
+}
 
 .Home-Header{
     width: 700px;
+    color: white;
 }
 .Home-subText{
     width: 400px;
+    color: white;
 }
 .Home-Top-wrap{
     height: calc(90vh - 110px);
@@ -108,6 +115,7 @@
 .fet-stuffbox{
     background: black;
     width: fit-content;
+    flex-wrap: wrap;
     padding: 70px 40px;
     border-radius: 30px;
 }
@@ -341,6 +349,7 @@
     width: 55vw;
     background:black;
 }
+
 .signSection{
     height: calc(100vh - 110px);
     color: white;
@@ -437,13 +446,40 @@ body{
 .pack p ,.pack h2{
     color: black;
 }
+  .sign{
+    display: block;
 
+    margin-top: 90px;
+}
+    .signboxImg{
+        display: none;
+    }
+    .signSection{
+        height: calc(100vh - 110px);
+        color: white;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        right: 0;
+        overflow-y: scroll;
+        padding-bottom: 120px;
+
+    }
 
 @media screen and (max-width: 900px){
+    .infoUs-wrap{
+        padding-left: 50px;
+    }
+    .Hero, .Home-Top{
+        height: fit-content;
+    }
     .Home-Top-wrap{
-        height: calc(100vh - 110px);
+        height: fit-content;
         padding-left: 30px;
-        zoom: 85%;
+        padding-bottom: 80px;
+        zoom: 75%;
+        margin-top: 100px;
     }
     .Home-Header, .fet-title, .justInfo-title, .Last Title{
         width: 100%;
@@ -451,7 +487,7 @@ body{
 
     }
     .some-OtherSTF{
-        zoom: 89%;
+        zoom: 79%;
     }
     .infoLeft-wrap{
         margin-left: 30px;
@@ -485,7 +521,7 @@ body{
     .fet-stuff{
         flex-direction:column;
         justify-items: center;
-        zoom: 90%;
+        zoom: 80%;
         gap: 30px;
     }
     .features{
@@ -573,26 +609,6 @@ body{
         margin-top: 200px;
         padding: 0 30px 200px;
     }
-    .sign{
-    display: block;
-
-    margin-top: 90px;
-}
-    .signboxImg{
-        display: none;
-    }
-    .signSection{
-        height: calc(100vh - 110px);
-        color: white;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        position: fixed;
-        right: 0;
-        overflow-y: scroll;
-        padding-bottom: 120px;
-
-    }
     .fx{
     display: flex;
     flex-direction: column;
@@ -605,29 +621,77 @@ body{
         zoom: 80%;
 
         background: orange;
-        height: 65vh;
+        height: 80vh;
         margin-top: 60px;
-        width:60vh;
+        width:80%;
     }
     .juustInfo-Text{
         zoom: 80%;
     }
+    .fet-stuffbox {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
 }
 
 @media screen and (max-width: 500px){
-    
+    .info-title{
+        zoom:80%;
+    }
     .morInfo-title{
         width: 500px;
         zoom: 79%;
 
     }
+    .moreInfo {
+        margin-top: 30vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0px 50px 100px;
+        zoom: 80%;
+    }
+    html{
+        height: fit-content;
+        max-width: 100%; 
+        overflow-x: hidden;
+    }
+    body{
+        width: 100%;
+        overflow-x: hidden;
+        zoom:100%;
+
+    }
+     .features{
+        width: 100%;
+ }
 }
 
-@media screen and (max-width: 300px){
-    
+@media screen and (max-width: 400px){
+    html{
+        height: fit-content;
+        max-width: 400px; 
+        overflow-x: hidden;
+    }
+    body{
+        width: 400px;
+        overflow-x: hidden;
+        zoom:95%;
+
+    }
+    .fet-stuffbox {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
     .morInfo-title{
         width: 500px;
         zoom: 79%;
 
     }
+ .features{
+        width: 400px;
+ }
 }

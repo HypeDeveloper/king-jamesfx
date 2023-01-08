@@ -1,6 +1,7 @@
 import axios from 'axios'
-const API_URL_ADMIN = `/api/admin/`;
-const API_URL = `/api/users/`;
+import { uri } from './authService';
+const API_URL_ADMIN = uri+`/api/admin/`;
+const API_URL = uri+`/api/users/`;
 
 
 
@@ -86,6 +87,17 @@ const confirmTrans = async (token, orderData) => {
 
     return res.data;
 };
+// User confirm trans Admin
+const updateTrans = async (token, updateData) => {
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    };
+    const res = await axios.post(API_URL_ADMIN + "trans/update", updateData, config)
+
+    return res.data;
+};
 
 export const aotherService = {
     allUsers,
@@ -94,5 +106,6 @@ export const aotherService = {
     getTransUser,
     createTrans,
     confirmTrans,
-    updatepackage
+    updatepackage,
+    updateTrans
 };

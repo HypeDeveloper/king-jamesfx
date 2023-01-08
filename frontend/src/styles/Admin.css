@@ -7,6 +7,7 @@
     justify-content: center;
     background: white;
     gap: 100px;
+    z-index: 10000;
     /* display: none; */
 }
 .ASign form{
@@ -125,6 +126,63 @@
     font-size: 1.3rem;
 }
 
-@media screen and (max-width: 900px) {
-
+@media screen and (max-width: 500px) {
+    .ustoTop {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+        zoom: 80%;
+        text-align: center;
+    }
+    .userTotal{
+    height:fit-content;
+    width:100%;
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    zoom: 90%;
+}
+.topAD {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.userTotalp {
+    height: fit-content;
+    width: 100%;
+}
+.usetoBon {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    zoom: 90%;
+    gap: 30px;
+}
+.usebond{
+    display: none;
+}
+.workc{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    zoom: 130%
+}
+.ASign{
+    height: 120vh;
+    position :fixed;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    gap: 100px;
+    z-index: 10000;
+    /* display: none; */
+}
+.nomw{
+    display: none;
+}
 }

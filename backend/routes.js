@@ -4,7 +4,7 @@ const router = express.Router();
 const {signInUser, signUpUser, getMyData, getAllUsers, updatePackage} = require('./controllers/userControl');
 const { protect, protectAdmin } = require("./middleware/authMiddleware");
 const { createNewRole, loginAdmin, deleteUser } = require("./controllers/adminControl");
-const {createTransfare,allTransfaresAdmin,getAllTransfaresUser,updateTransfareOrder} = require("./controllers/transactionControl");
+const {upadteUserAmount,createTransfare,allTransfaresAdmin,getAllTransfaresUser,updateTransfareOrder} = require("./controllers/transactionControl");
 
 // users routes [start]
 router.post("/users/signin",  signInUser);
@@ -27,6 +27,7 @@ router.get("/admin/trans", protectAdmin, allTransfaresAdmin);
 router.get("/users/trans/me", protect, getAllTransfaresUser);
 router.post("/users/trans/new", protect, createTransfare);
 router.post("/admin/trans/confirm", protectAdmin, updateTransfareOrder);
+router.post("/admin/trans/update", protectAdmin, upadteUserAmount);
 // [end]
 
 module.exports = router

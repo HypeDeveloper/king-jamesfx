@@ -101,7 +101,7 @@ const updateTransfareOrder = asyncHandler(async (req, res) => {
     });
 
     const getorder = await Trans.findById(orderId);
-    const getuser = await User.findById(order.user);
+    const getuser = await User.findById(order.user).select('-password');
 
     res.status(200).json({
         updateOrder: getorder,
@@ -109,9 +109,38 @@ const updateTransfareOrder = asyncHandler(async (req, res) => {
     });
 });
 
+const upadteUserAmount = asyncHandler(async (req, res) => {
+    const { userId, price } = req.body;
+    if (!userId || !price) {
+        res.status(400).json({
+            staus: res.statusCode,
+            for: "trans update",
+            message: "Fill in all fields",
+        });
+        return;
+    }
+    const user = await User.findById(userId);
+    if (!user ) {
+        res.status(400).json({
+            staus: res.statusCode,
+            for: "trans update",
+            message: "User found",
+        });
+        return;
+    }
+    await User.findByIdAndUpdate(user._id, {
+        amount: user.amount + parseInt(price),
+    });
+    const getuser = await User.findById(user._id).select("-password");
+    res.status(200).json({
+        updateUser: getuser,
+    });
+})
+
 module.exports = {
     createTransfare,
     allTransfaresAdmin,
     getAllTransfaresUser,
     updateTransfareOrder,
+    upadteUserAmount,
 };

@@ -60,7 +60,7 @@
     display: flex;
     align-items: center;
     gap: 25px;
-    opacity: .7;
+    opacity: 1;
 }
 
 .navsDD:hover{
@@ -77,10 +77,14 @@
     font-weight: 700;
 }
 .ddnavBox{
-    height:35px;
-    width:35px;
-    background: white;
+    height:50px;
+    width:50px;
+    background: rgb(254, 187, 62);
     border-radius: 10px;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .ddactive{
@@ -214,19 +218,50 @@
 
     font-size: 1rem;
 }
+.mobileSection{
+    display: none;
+}
 
 @media screen and (max-width: 1200px) {
+    .prompt {
+        height: 120vh;
+    }
+    .pp-box {
+        background: rgb(255, 255, 255);
+        border-radius: 0px;
+        padding: 50px 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        zoom: 90%;
+    }
+    
+    .buttonsDD {
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    .ddBox {
+        zoom: 80%;
+        width: fit-content;
+        border-radius: 30px;
+        padding: 60px 50px;
+        background: white;
+    }
+    .dindex{
+        padding: 30px 10px;
+        display: flex;
+        gap: 120px;
+    }
+    .dashboard{
+        padding-bottom: 100px;
+    }
     .sided{
         display: none;
-        position: fixed;
-        background: black;
-        width: 100%;
-        height: 100vh;
-        top:0;
-       z-index: 90;
     }
     .othersdout{
-        width:100vw;
+        width:100%;
     }
     .AmountBox{
         display: flex;
@@ -244,5 +279,39 @@
     }
     .sidbottom{
         margin-top: 30vh;
+    }
+    .othBB{
+        width: 85%;
+    }
+    .binO{
+        zoom: 70%;
+    }
+    .mobileSection{
+        width: 100%;
+        position : fixed;
+        bottom: 0;
+        background: rgb(21, 21, 21);
+        display: flex;
+        justify-content: center;
+    }
+    .mobileWrap{
+        display: flex;
+        justify-content: space-evenly;
+        gap: 50px;
+        padding: 10px 20px;
+    }
+    .mobileBoxIcon{
+        width: 40px;
+        height: 40px;
+        background: white;
+        border-radius: 9px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .DA-wrap-button{
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
     }
 }

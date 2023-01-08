@@ -167,7 +167,16 @@ const signInUser = asyncHandler(async (req, res) => {
 // [private, GET /api/users/me]
 // DATA [userTOKEN]
 const getMyData = asyncHandler(async (req, res) => {
-    const { _id, email, name, username, amount, inviteCount} = await User.findById(req.user.id);
+    const {
+        _id,
+        email,
+        name,
+        username,
+        amount,
+        inviteCount,
+        userRefCode,
+        pack,
+    } = await User.findById(req.user.id);
     res.status(200).json({
         _id: _id,
         token: generateJWT(_id),
@@ -177,6 +186,8 @@ const getMyData = asyncHandler(async (req, res) => {
             name: name,
             amount: amount,
             inviteCount: inviteCount,
+            userRefCode: userRefCode,
+            pack: pack,
         },
     });
 })

@@ -75,7 +75,7 @@ const createNewRole = asyncHandler(async (req, res) => {
 const loginAdmin = asyncHandler(async (req, res) => {
     const { token, role } = req.body;
 
-    const admin = await Admin.findOne({ role });
+    const admin = await Admin.findOne({ role })
     if (!admin) {
         res.status(400).json({
             staus: res.statusCode,

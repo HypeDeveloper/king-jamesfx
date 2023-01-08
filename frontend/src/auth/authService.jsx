@@ -1,7 +1,7 @@
 import axios from 'axios'
-
-const API_URL = `/api/users/`;
-const API_URL_ADMIN = `/api/admin/`;
+export let uri = ''
+const API_URL = uri+`/api/users/`;
+const API_URL_ADMIN = uri+`/api/admin/`;
 // Change Befor Production
 
 // register user
