@@ -17,6 +17,21 @@ import { AdminIndex, AdminTrans, DashboardAdmin } from './pages/Admin'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <SuspendService/>
+  </React.StrictMode>,
+)
+
+function App() {
+  return (
+    <>
+      <Navbar />
+      <Outlet/>
+    </>
+  )
+}
+
+function AppBase(){
+  return(
     <BrowserRouter>
       <AuthContextProvider>
       <Routes>
@@ -38,24 +53,21 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       </Routes>
       </AuthContextProvider>
     </BrowserRouter>
-  </React.StrictMode>,
-)
-
-function App() {
-  return (
-    <>
-      <Navbar />
-      <Outlet/>
-    </>
   )
 }
 
-/*
-
---/
------[NavBar]
------Home
------About
---/dashboard
----
-*/
+function SuspendService(){
+  return( 
+    <>
+      <div className="suspend">
+        <h1 className='Title aSub'>
+          Dear User,
+        </h1>
+        <h3 className='Subtext aSub'>The current service has been supended</h3>
+        <p className='Content aSub'>
+          Contact the admin to resolve this <span className='reSub'>error</span>
+        </p>
+      </div>
+    </>
+  )
+}

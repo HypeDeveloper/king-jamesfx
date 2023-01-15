@@ -117,8 +117,8 @@ const signUpUser = asyncHandler(async (req, res) => {
         amount:0,
         pack: 'Starter'
     });
-
     if (user) {
+
         res.status(201).json({
             _id: user.id,
             token: generateJWT(user._id),
@@ -246,3 +246,4 @@ module.exports = {
     getMyData,
     updatePackage
 };
+

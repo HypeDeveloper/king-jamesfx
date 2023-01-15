@@ -51,11 +51,14 @@ export function Home() {
 
             </div> */}
 
+            <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
 
             <div className="infoUs">
+                
                 <h1 className="Title info-title">
                     What Are We Known For
                 </h1>
+
                 <div className="infoUs-wrap">
                     <div className="infoLeft-wrap">
                         <div className="info-box">

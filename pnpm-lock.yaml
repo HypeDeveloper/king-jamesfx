@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   bcryptjs: ^2.4.3
+  body-parser: ^1.20.1
   colors: ^1.4.0
   cors: ^2.8.5
   dotenv: ^16.0.3
@@ -11,18 +12,21 @@ specifiers:
   inquirer-fuzzy-path: ^2.3.0
   jsonwebtoken: ^9.0.0
   mongoose: ^6.8.2
+  nodemailer: ^6.8.0
   password-validator: ^5.3.0
   randomstring: ^1.2.3
   shelljs: ^0.8.5
 
 dependencies:
   bcryptjs: 2.4.3
+  body-parser: 1.20.1
   cors: 2.8.5
   dotenv: 16.0.3
   express: 4.18.2
   express-async-handler: 1.2.0
   jsonwebtoken: 9.0.0
   mongoose: 6.8.2
+  nodemailer: 6.8.0
   password-validator: 5.3.0
   randomstring: 1.2.3
 
@@ -1614,6 +1618,11 @@ packages:
   /negotiator/0.6.3:
     resolution: {integrity: sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==}
     engines: {node: '>= 0.6'}
+    dev: false
+
+  /nodemailer/6.8.0:
+    resolution: {integrity: sha512-EjYvSmHzekz6VNkNd12aUqAco+bOkRe3Of5jVhltqKhEsjw/y0PYPJfp83+s9Wzh1dspYAkUW/YNQ350NATbSQ==}
+    engines: {node: '>=6.0.0'}
     dev: false
 
   /object-assign/4.1.1:

@@ -1,5 +1,5 @@
 import axios from 'axios'
-export let uri = ''
+export let uri = 'http://localhost:8000'
 const API_URL = uri+`/api/users/`;
 const API_URL_ADMIN = uri+`/api/admin/`;
 // Change Befor Production
