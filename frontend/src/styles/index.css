@@ -29,7 +29,7 @@
 
 .suspend{
     padding: 150px;
-    height: 100vh;
+    height: 130vh;
     background: black;
 }
 .aSub{
@@ -38,4 +38,10 @@
 .reSub{
     color: red
 
+}
+
+@media screen and (max-width: 400px){
+    .suspend{
+        padding: 30px;
+    }
 }
